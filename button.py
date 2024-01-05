@@ -9,7 +9,7 @@ def start_button():
 
 def admin_menu():
     m = InlineKeyboardMarkup(resize_keyboard=True)
-    m.insert(InlineKeyboardButton('Рассылка', callback_data='mssndd'))
+    m.insert(InlineKeyboardButton('Newsletter', callback_data='mssndd'))
     m.insert(InlineKeyboardButton('GET SIGNAL', callback_data='gtsgn'))
     return m
 
@@ -29,5 +29,5 @@ def get_signal():
 
 def cancel():
     m = ReplyKeyboardMarkup(resize_keyboard=True)
-    m.add(KeyboardButton('Отмена'))
+    m.add(KeyboardButton('Cancel'))
     return m
