@@ -36,7 +36,7 @@ class MassSend(StatesGroup):
 @dp.message_handler(commands='start')
 async def strt(message: types.Message):
     if message.from_user.id in config.ADMIN_ID:
-        await bot.send_message(message.from_user.id, text=f"Вы администратор!",
+        await bot.send_message(message.from_user.id, text=f"Hello Admin!",
                                reply_markup=button.admin_menu())
     elif message.from_user.id in db.all_user():
         await bot.send_message(message.from_user.id, text=f"Hi, {message.from_user.first_name}\n"
@@ -118,7 +118,7 @@ async def mass_send(call: types.CallbackQuery):
     if call.from_user.id in config.ADMIN_ID:
         print('true')
         await MassSend.new_message.set()
-        await bot.send_message(call.from_user.id, text='Отправьте сообщение которое будет разослано',
+        await bot.send_message(call.from_user.id, text='Send A message that will be sent out',
                                reply_markup=button.cancel())
 
 
